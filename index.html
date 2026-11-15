@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cours 5 — Photomontage : compte rendu</title>
+<title>Cours 5 : photomontage, compte rendu</title>
 <meta name="description" content="Compte rendu du cours 5 sur le photomontage : le fond, le détourage, la mise en place, les ombres, les matières et les reflets.">
 <link rel="stylesheet" href="assets/style.css">
 <script>document.documentElement.classList.add("js");</script>
@@ -14,7 +14,7 @@
 <div class="intro" id="intro" aria-hidden="true">
   <div class="intro__inner">
     <p class="intro__kicker">Initiation au montage · Photoshop</p>
-    <p class="intro__title">Cours 5 — <em>Photomontage</em></p>
+    <p class="intro__title">Cours 5 : <em>Photomontage</em></p>
     <div class="intro__rule"></div>
   </div>
 </div>
@@ -51,15 +51,8 @@
   <p class="step-meta">Avant de commencer</p>
   <h2>Un montage n'est pas un collage</h2>
 
-  <p>Le cours s'ouvre sur une phrase qu'on peut garder comme règle de travail : <em>« le montage, il
-    faut qu'il soit cohérent, il faut qu'il soit logique »</em>. Un photomontage ne consiste pas à
-    découper une image et à la poser sur une autre, mais à <strong>reconstruire une scène
-    physiquement crédible</strong> : un objet photographié ailleurs, un décor peint de toutes pièces,
-    et entre les deux une lumière qui tient debout.</p>
-
-  <p>Ce qui trahit un montage, ce n'est presque jamais le détourage. C'est la lumière : une ombre du
-    mauvais côté, une ombre trop nette dans un décor diffus, un objet qui ne touche pas le sol. Tout le
-    reste du cours découle d'une seule question — <strong>d'où vient la lumière ?</strong></p>
+  <p>Un photomontage est une image faite de plusieurs autres : un objet photographié quelque part
+    est détouré, posé dans un décor fabriqué sous Photoshop, et éclairé par la lumière de ce décor.</p>
 
   <div class="polaroids">
     <figure class="polaroid">
@@ -85,9 +78,9 @@
 
   <p>On part d'un document neuf en <strong>A4, 300 dpi, Adobe RGB</strong>. Le décor de la
     démonstration est un décor de studio : un mur derrière, une table devant. Chaque zone a son propre
-    <strong>calque de couleur unie</strong> — jamais un aplat peint directement sur l'image. C'est ce
-    qui permet de revenir sur la teinte du mur dix minutes plus tard, quand l'objet est arrivé et que
-    la couleur ne colle plus.</p>
+    calque de couleur unie, jamais un aplat peint directement sur l'image. C'est ce qui permet de
+    revenir sur la teinte du mur dix minutes plus tard, quand l'objet est arrivé et que la couleur ne
+    colle plus.</p>
 
   <p>La limite entre la table et le mur s'arrête proprement : une sélection rectangulaire, puis un
     <strong>masque de fusion</strong>. Le calque reste entier, on peut déplacer la limite quand on
@@ -95,33 +88,16 @@
 
   <figure>
     <div class="figure-frame">
-      <svg viewBox="0 0 780 380" role="img" aria-label="Schéma : un mur en haut, une table en bas, une limite adoucie entre les deux.">
+      <svg viewBox="0 0 780 380" role="img" aria-label="Schéma : un mur et une table, deux calques de couleur unie, avec une limite adoucie entre les deux.">
         <rect width="780" height="380" fill="#fdfaf3"/>
         <rect x="60" y="30" width="660" height="190" fill="#d5c8b2"/>
         <rect x="60" y="220" width="660" height="130" fill="#bfae92"/>
         <line x1="60" y1="220" x2="720" y2="220" stroke="#a8452e" stroke-width="1.6" stroke-dasharray="7 5"/>
-        <g font-family="ui-sans-serif, system-ui, sans-serif" font-size="16">
-          <circle cx="108" cy="112" r="14" fill="#a8452e"/>
-          <text x="108" y="117" fill="#fff" font-size="13.5" text-anchor="middle">1</text>
-          <text x="134" y="117" fill="#413b32">le mur</text>
-          <circle cx="108" cy="296" r="14" fill="#a8452e"/>
-          <text x="108" y="301" fill="#fff" font-size="13.5" text-anchor="middle">2</text>
-          <text x="134" y="301" fill="#413b32">la table, ou le sol</text>
-          <circle cx="470" cy="184" r="14" fill="#a8452e"/>
-          <text x="470" y="189" fill="#fff" font-size="13.5" text-anchor="middle">3</text>
-          <text x="494" y="189" fill="#413b32">la limite, adoucie</text>
-          <line x1="470" y1="198" x2="470" y2="216" stroke="#a8452e" stroke-width="1.4"/>
-          <line x1="470" y1="220" x2="470" y2="240" stroke="#a8452e" stroke-width="1.4" stroke-dasharray="3 3"/>
-        </g>
+        <text x="86" y="74" fill="#413b32" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16">couleur unie.</text>
       </svg>
     </div>
   </figure>
 
-  <div class="note">
-    <p><b>À vérifier avant de continuer.</b> Si le fond est déjà aplati, on ne peut plus le corriger.
-      C'est pour ça que le prof nomme ses calques au fur et à mesure : <em>Sol</em>, <em>Mur</em>,
-      <em>Table</em>, <em>Lumière</em>.</p>
-  </div>
 </section>
 
 <!-- 3 -->
@@ -129,13 +105,13 @@
   <p class="step-meta">Étape 2</p>
   <h2>Détourer l'objet à la plume</h2>
 
-  <p>Le contour se construit avec l'outil <strong>Plume</strong> : peu de points, des courbes tendues,
-    et on referme le tracé. On l'enregistre dans le panneau Tracés — c'est lui qui garantit un contour
-    propre, et il resservira.</p>
+  <p>Le contour se construit avec l'outil Plume : peu de points, des courbes tendues, et on referme
+    le tracé. On l'enregistre dans le panneau Tracés : c'est lui qui garantit un contour propre, et il
+    resservira.</p>
 
-  <p>Du tracé, on crée une sélection ; de cette sélection, un <strong>masque de fusion</strong> sur le
-    calque de l'objet. L'image n'est jamais découpée, elle est masquée. Un <strong>Alt + clic</strong>
-    sur la vignette du masque l'affiche en noir et blanc : les oublis sautent aux yeux.</p>
+  <p>Du tracé, on crée une sélection ; de cette sélection, un masque de fusion sur le calque de
+    l'objet. L'image n'est jamais découpée, elle est masquée. Un Alt + clic sur la vignette du masque
+    l'affiche en noir et blanc : les oublis sautent aux yeux.</p>
 
   <figure>
     <div class="figure-frame">
@@ -183,7 +159,7 @@
 
   <div class="note">
     <p><b>La sélection automatique ne suffit pas.</b> Elle va plus vite, mais elle laisse des bords
-      approximatifs et des morceaux oubliés — un bout de verre, une ligne de contour. On vérifie le
+      approximatifs et des morceaux oubliés, un bout de verre, une ligne de contour. On vérifie le
       masque en noir et blanc, et on reprend à la plume ce qui doit être net.</p>
   </div>
 
@@ -233,10 +209,10 @@
   <p class="step-meta">Étape 4</p>
   <h2>Les deux ombres</h2>
 
-  <p>Un objet porte <strong>deux ombres différentes</strong>, et les confondre suffit à rater un
-    montage. L'<strong>ombre propre</strong>, ou ombre de forme, reste sur l'objet : c'est la partie que
-    la lumière n'atteint pas, du côté opposé à la source. L'<strong>ombre portée</strong>, ou projetée,
-    tombe sur une autre surface — le sol, le mur — du même côté que l'ombre propre.</p>
+  <p>Un objet porte deux ombres différentes, et les confondre suffit à rater un montage.
+    L'<strong>ombre propre</strong>, ou ombre de forme, reste sur l'objet : c'est la partie que la
+    lumière n'atteint pas, du côté opposé à la source. L'<strong>ombre portée</strong>, ou projetée,
+    tombe sur une autre surface, le sol ou le mur, du même côté que l'ombre propre.</p>
 
   <p>Le sens est lié, sans exception : on ne peut pas avoir l'ombre propre d'un côté de l'objet et
     l'ombre portée de l'autre. Ce n'est pas une question de goût, c'est physiquement impossible.</p>
@@ -319,16 +295,14 @@
         renvoie. C'est elle qui manque aux montages qui paraissent faux.</p>
     </div>
 
-    <figcaption><b>Fig. 3</b> — Déplacez la source : le point de lumière et l'ombre suivent. ① l'ombre
-      propre, sur l'objet ; ② l'ombre portée, au sol. Elles restent toujours du même côté.</figcaption>
   </figure>
 
   <h3>Et une ombre ne se fait pas en un seul calque</h3>
 
-  <p>Une ombre crédible est un <strong>empilement</strong> : une base large et très floue, un noyau
-    plus sombre et plus resserré, puis l'ombre de contact — minuscule, presque noire, collée au pied de
-    l'objet. L'ombre s'éclaircit en s'éloignant, parce que la lumière rebondit tout autour : on n'est
-    jamais dans une pièce entièrement noire.</p>
+  <p>Une ombre crédible est un empilement : une base large et très floue, un noyau plus sombre et plus
+    resserré, puis l'ombre de contact, minuscule et presque noire, collée au pied de l'objet. L'ombre
+    s'éclaircit en s'éloignant, parce que la lumière rebondit tout autour : on n'est jamais dans une
+    pièce entièrement noire.</p>
 
   <figure>
     <div class="figure-frame">
@@ -357,7 +331,7 @@
         </g>
       </svg>
     </div>
-    <figcaption><b>Fig. 4</b> — Trois calques, trois masques. L'ombre de contact ③ est ce qui pose
+    <figcaption><b>Fig. 3.</b> Trois calques, trois masques. L'ombre de contact ③ est ce qui pose
       réellement l'objet sur le sol.</figcaption>
   </figure>
 
@@ -407,8 +381,8 @@
         <span class="pin" style="left:74%;top:76%">3</span>
       </div>
     </div>
-    <figcaption><b>Trois niveaux d'ombre, en vrai.</b> ① le groupe qui les rassemble ; ② deux calques
-      d'ombre empilés — un pour le noyau, un pour la base ; ③ le masque de « ombre vase » garde la
+          <figcaption><b>Trois niveaux d'ombre, en vrai.</b> ① le groupe qui les rassemble ; ② deux calques
+      d'ombre empilés, un pour le noyau, un pour la base ; ③ le masque de « ombre vase » garde la
       trace du pinceau. Les vignettes noires sont des masques inversés.</figcaption>
   </figure>
 
@@ -476,11 +450,14 @@
   <p class="step-meta">Étape 5</p>
   <h2>Opaque, translucide, transparent</h2>
 
-  <p>La matière décide de ce que devient la lumière, et c'est l'ombre portée qui le raconte. Une
-    matière <strong>opaque</strong> bloque la lumière : l'ombre est dense, franche, presque noire au
-    contact. Une matière <strong>translucide</strong> en laisse passer une partie, et l'ombre s'allège
-    en prenant la couleur de l'objet. Une matière <strong>transparente</strong> laisse tout passer en
-    déviant les rayons : le verre concentre la lumière et laisse un point clair dans l'ombre.</p>
+  <p>Trois matières, trois ombres. Opaque : la lumière est bloquée, l'ombre est dense, presque noire
+    au contact. Translucide : la lumière en passe un peu, l'ombre s'allège et prend la couleur de
+    l'objet. Transparente : la lumière traverse et se dévie, le verre la concentre jusqu'à faire un
+    point clair dans l'ombre.</p>
+
+  <p>Un verre transparent ne s'intègre pas comme un objet opaque. On passe son calque en mode
+    Produit : le verre assombrit le décor sans le cacher. On duplique ce calque, et on met la copie en
+    Luminosité : elle rend les reflets et les bords clairs. Les deux ensemble, le verre est là.</p>
 
   <div class="polaroids">
     <figure class="polaroid">
@@ -508,11 +485,10 @@
     d'une image retournée. C'est ce qui fait qu'un verre posé sur une table semble vraiment posé
     dessus.</p>
 
-  <p>La méthode est simple : on <strong>duplique l'objet</strong>, on le retourne par
-    <strong>symétrie verticale</strong>, on le place sous lui le long de la ligne de contact, puis on
-    baisse l'opacité, on floute, et on dégrade le masque pour que le reflet s'estompe. Un reflet est
-    toujours plus sombre et plus flou que l'objet, et il se déforme si la surface n'est pas plane — un
-    verre rempli d'eau, par exemple.</p>
+  <p>La méthode est simple : on duplique l'objet, on le retourne par symétrie verticale, on le place
+    sous lui le long de la ligne de contact, puis on baisse l'opacité, on floute, et on dégrade le
+    masque pour que le reflet s'estompe. Un reflet est toujours plus sombre et plus flou que l'objet,
+    et il se déforme si la surface n'est pas plane, un verre rempli d'eau par exemple.</p>
 
   <figure>
     <div class="figure-frame">

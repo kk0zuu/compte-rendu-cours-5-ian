@@ -63,10 +63,8 @@
     el.style.setProperty("--d", Math.min(n * 80, 320) + "ms");
   });
 
-  const reveals = targets;
-
   if (reduce) {
-    reveals.forEach((el) => el.classList.add("in"));
+    targets.forEach((el) => el.classList.add("in"));
   } else {
     const shown = new Set();
 
@@ -85,7 +83,7 @@
         },
         { rootMargin: "0px 0px -8% 0px", threshold: 0.05 }
       );
-      reveals.forEach((el) => io.observe(el));
+      targets.forEach((el) => io.observe(el));
     }
 
     // filet de sécurité : si l'observateur ne se déclenche pas, on révèle au défilement
@@ -93,7 +91,7 @@
     const sweep = () => {
       ticking = false;
       const h = window.innerHeight;
-      reveals.forEach((el) => {
+      targets.forEach((el) => {
         if (shown.has(el)) return;
         const r = el.getBoundingClientRect();
         if (r.top < h * 0.94 && r.bottom > 0) show(el);
