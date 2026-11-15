@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cours 5 — Photomontage : compte rendu</title>
+<meta name="description" content="Compte rendu du cours 5 sur le photomontage : le fond, le détourage, la mise en place, les ombres, les matières et les reflets.">
+<link rel="stylesheet" href="assets/style.css">
+<script>document.documentElement.classList.add("js");</script>
+</head>
+<body class="locked">
+
+<!-- intro -->
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="intro__inner">
+    <p class="intro__kicker">Initiation au montage · Photoshop</p>
+    <p class="intro__title">Cours 5 — <em>Photomontage</em></p>
+    <div class="intro__rule"></div>
+  </div>
+</div>
+
+<div class="page">
+
+<header class="masthead">
+  <p class="ransom"><b>cours</b><b>05</b><b>montage</b></p>
+  <h1>Faire tenir un objet dans un décor qui n'existe pas, et lui donner la <span class="cut">lumière</span> de l'endroit</h1>
+  <p class="lede">Compte rendu de la séance. Le déroulé du cours, dans l'ordre : le fond, le détourage,
+    la mise en place, les ombres, les matières et les reflets. Ce qu'on fait, et ce qu'il faut
+    regarder.</p>
+
+  <div class="stamp" aria-hidden="true">initiation<span>au montage</span>photoshop</div>
+
+  <nav class="index-card" aria-label="Sommaire">
+    <h2>Sommaire</h2>
+    <ol>
+      <li><a href="#idee">L'idée du cours</a></li>
+      <li><a href="#fond">Le fond, en trois zones</a></li>
+      <li><a href="#detourage">Détourer à la plume</a></li>
+      <li><a href="#pose">Poser l'objet</a></li>
+      <li><a href="#ombres">Les deux ombres</a></li>
+      <li><a href="#matieres">Opaque, translucide, transparent</a></li>
+      <li><a href="#reflets">Les reflets</a></li>
+    </ol>
+  </nav>
+</header>
+
+<main>
+
+<!-- 1 -->
+<section id="idee">
+  <p class="step-meta">Avant de commencer</p>
+  <h2>Un montage n'est pas un collage</h2>
+
+  <p>Le cours s'ouvre sur une phrase qu'on peut garder comme règle de travail : <em>« le montage, il
+    faut qu'il soit cohérent, il faut qu'il soit logique »</em>. Un photomontage ne consiste pas à
+    découper une image et à la poser sur une autre, mais à <strong>reconstruire une scène
+    physiquement crédible</strong> : un objet photographié ailleurs, un décor peint de toutes pièces,
+    et entre les deux une lumière qui tient debout.</p>
+
+  <p>Ce qui trahit un montage, ce n'est presque jamais le détourage. C'est la lumière : une ombre du
+    mauvais côté, une ombre trop nette dans un décor diffus, un objet qui ne touche pas le sol. Tout le
+    reste du cours découle d'une seule question — <strong>d'où vient la lumière ?</strong></p>
+
+  <div class="polaroids">
+    <figure class="polaroid">
+      <img src="assets/img/ex-mushroom.jpg" alt="Champignon rouge sur fond rouge, ombre portée douce." data-zoom loading="lazy">
+      <figcaption>cyclo, ombre douce</figcaption>
+    </figure>
+    <figure class="polaroid">
+      <img src="assets/img/ex-dessert.jpg" alt="Coupe de glace dans un verre vert, ombre nette." data-zoom loading="lazy">
+      <figcaption>ombre dure, contact dense</figcaption>
+    </figure>
+    <figure class="polaroid">
+      <img src="assets/img/ex-glass.jpg" alt="Verre orange avec son reflet sur une surface brillante." data-zoom loading="lazy">
+      <figcaption>reflet sur support brillant</figcaption>
+    </figure>
+  </div>
+
+</section>
+
+<!-- 2 -->
+<section id="fond">
+  <p class="step-meta">Étape 1</p>
+  <h2>Le fond, en trois zones</h2>
+
+  <p>On part d'un document neuf en <strong>A4, 300 dpi, Adobe RGB</strong>. Le décor de la
+    démonstration est un décor de studio : un mur derrière, une table devant. Chaque zone a son propre
+    <strong>calque de couleur unie</strong> — jamais un aplat peint directement sur l'image. C'est ce
+    qui permet de revenir sur la teinte du mur dix minutes plus tard, quand l'objet est arrivé et que
+    la couleur ne colle plus.</p>
+
+  <p>La limite entre la table et le mur s'arrête proprement : une sélection rectangulaire, puis un
+    <strong>masque de fusion</strong>. Le calque reste entier, on peut déplacer la limite quand on
+    veut.</p>
+
+  <figure>
+    <div class="figure-frame">
+      <svg viewBox="0 0 780 380" role="img" aria-label="Schéma : un mur en haut, une table en bas, une limite adoucie entre les deux.">
+        <rect width="780" height="380" fill="#fdfaf3"/>
+        <rect x="60" y="30" width="660" height="190" fill="#d5c8b2"/>
+        <rect x="60" y="220" width="660" height="130" fill="#bfae92"/>
+        <line x1="60" y1="220" x2="720" y2="220" stroke="#a8452e" stroke-width="1.6" stroke-dasharray="7 5"/>
+        <g font-family="ui-sans-serif, system-ui, sans-serif" font-size="16">
+          <circle cx="108" cy="112" r="14" fill="#a8452e"/>
+          <text x="108" y="117" fill="#fff" font-size="13.5" text-anchor="middle">1</text>
+          <text x="134" y="117" fill="#413b32">le mur</text>
+          <circle cx="108" cy="296" r="14" fill="#a8452e"/>
+          <text x="108" y="301" fill="#fff" font-size="13.5" text-anchor="middle">2</text>
+          <text x="134" y="301" fill="#413b32">la table, ou le sol</text>
+          <circle cx="470" cy="184" r="14" fill="#a8452e"/>
+          <text x="470" y="189" fill="#fff" font-size="13.5" text-anchor="middle">3</text>
+          <text x="494" y="189" fill="#413b32">la limite, adoucie</text>
+          <line x1="470" y1="198" x2="470" y2="216" stroke="#a8452e" stroke-width="1.4"/>
+          <line x1="470" y1="220" x2="470" y2="240" stroke="#a8452e" stroke-width="1.4" stroke-dasharray="3 3"/>
+        </g>
+      </svg>
+    </div>
+  </figure>
+
+  <div class="note">
+    <p><b>À vérifier avant de continuer.</b> Si le fond est déjà aplati, on ne peut plus le corriger.
+      C'est pour ça que le prof nomme ses calques au fur et à mesure : <em>Sol</em>, <em>Mur</em>,
+      <em>Table</em>, <em>Lumière</em>.</p>
+  </div>
+</section>
+
+<!-- 3 -->
+<section id="detourage">
+  <p class="step-meta">Étape 2</p>
+  <h2>Détourer l'objet à la plume</h2>
+
+  <p>Le contour se construit avec l'outil <strong>Plume</strong> : peu de points, des courbes tendues,
+    et on referme le tracé. On l'enregistre dans le panneau Tracés — c'est lui qui garantit un contour
+    propre, et il resservira.</p>
+
+  <p>Du tracé, on crée une sélection ; de cette sélection, un <strong>masque de fusion</strong> sur le
+    calque de l'objet. L'image n'est jamais découpée, elle est masquée. Un <strong>Alt + clic</strong>
+    sur la vignette du masque l'affiche en noir et blanc : les oublis sautent aux yeux.</p>
+
+  <figure>
+    <div class="figure-frame">
+      <svg viewBox="0 0 780 280" role="img" aria-label="Schéma en trois temps : tracé à la plume, panneau des tracés, calque avec masque de fusion.">
+        <rect width="780" height="280" fill="#fdfaf3"/>
+        <defs>
+          <marker id="arw2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#a8452e"/>
+          </marker>
+        </defs>
+        <rect x="24" y="42" width="186" height="166" fill="#efe8da" stroke="#d7cebc"/>
+        <path d="M78 168 q-8-52 34-66 q46-16 62 26 q14 40-22 56 q-50 20-74-16z" fill="#8d7553"/>
+        <path d="M74 166 q-6-56 38-70 q50-16 66 28 q16 44-24 60 q-54 20-80-18z" fill="none" stroke="#a8452e" stroke-width="1.6" stroke-dasharray="6 4"/>
+        <g fill="#fff" stroke="#a8452e" stroke-width="1.6">
+          <rect x="70" y="161" width="8" height="8"/>
+          <rect x="110" y="94" width="8" height="8"/>
+          <rect x="172" y="121" width="8" height="8"/>
+          <rect x="152" y="178" width="8" height="8"/>
+        </g>
+        <line x1="222" y1="125" x2="268" y2="125" stroke="#a8452e" stroke-width="1.6" marker-end="url(#arw2)"/>
+        <rect x="280" y="72" width="176" height="96" fill="#2e2e2c" rx="3"/>
+        <text x="292" y="92" fill="#93938c" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10" letter-spacing="1.2">TRACÉS</text>
+        <rect x="292" y="102" width="152" height="26" fill="#3d3d3a"/>
+        <rect x="298" y="108" width="14" height="14" fill="#5a5a55"/>
+        <text x="318" y="119" fill="#efefea" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11.5">Contour objet</text>
+        <line x1="468" y1="125" x2="514" y2="125" stroke="#a8452e" stroke-width="1.6" marker-end="url(#arw2)"/>
+        <rect x="526" y="72" width="228" height="96" fill="#2e2e2c" rx="3"/>
+        <text x="538" y="92" fill="#93938c" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10" letter-spacing="1.2">CALQUES</text>
+        <rect x="538" y="102" width="204" height="28" fill="#3d3d3a"/>
+        <circle cx="549" cy="116" r="5" fill="none" stroke="#8a8a83"/>
+        <rect x="562" y="107" width="20" height="16" fill="#8d7553"/>
+        <rect x="586" y="107" width="20" height="16" fill="#f4f4f0"/>
+        <path d="M596 107 h10 v16 h-10 z" fill="#1b1b19"/>
+        <text x="614" y="119" fill="#efefea" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11.5">Objet</text>
+        <g font-family="ui-sans-serif, system-ui, sans-serif" font-size="15.5" fill="#413b32">
+          <text x="24" y="238">1 · le tracé à la plume, refermé</text>
+          <text x="280" y="196">2 · tracé enregistré,</text>
+          <text x="280" y="217">transformé en sélection</text>
+          <text x="526" y="196">3 · masque de fusion</text>
+          <text x="526" y="217">sur le calque de l'objet</text>
+        </g>
+      </svg>
+    </div>
+  </figure>
+
+  <div class="note">
+    <p><b>La sélection automatique ne suffit pas.</b> Elle va plus vite, mais elle laisse des bords
+      approximatifs et des morceaux oubliés — un bout de verre, une ligne de contour. On vérifie le
+      masque en noir et blanc, et on reprend à la plume ce qui doit être net.</p>
+  </div>
+
+  <figure>
+    <div class="figure-frame">
+      <div class="shot shot--small">
+        <img src="assets/img/shot-calques.png" alt="Panneau Calques du fichier du cours : groupe verre reflet, calques montage-1-verre lumière et montage-1-verre, groupe verre." data-zoom>
+        <span class="pin" style="left:30%;top:23%">1</span>
+        <span class="pin" style="left:30%;top:55%">2</span>
+      </div>
+    </div>
+    <figcaption><b>Le résultat, dans le fichier du cours.</b> ① le groupe « verre reflet » porte
+      lui-même un masque ; ② l'objet détouré garde sa vignette de masque à côté de sa vignette
+      d'image. Rien n'est effacé : tout reste réversible.</figcaption>
+  </figure>
+</section>
+
+<!-- 4 -->
+<section id="pose">
+  <p class="step-meta">Étape 3</p>
+  <h2>Poser l'objet dans le décor</h2>
+
+  <p>Échelle, position, perspective. Avant tout le reste, on vérifie la <strong>ligne de
+    contact</strong> : l'objet doit toucher le sol. Un objet qui flotte de deux pixels ne s'intègre
+    jamais, même avec de belles ombres.</p>
+
+  <p>L'ombre déjà présente sur la photo de l'objet n'est pas un détail : elle indique d'où vient la
+    lumière. C'est elle qui impose le sens de toutes les ombres qu'on fabrique ensuite.</p>
+
+  <figure>
+    <div class="figure-frame">
+      <div class="shot shot--photo">
+        <img src="assets/img/vase.png" alt="Vase blanc posé sur un fond vert, avec son ombre portée au sol." data-zoom loading="lazy">
+        <span class="pin" style="left:49%;top:80%">1</span>
+        <span class="pin" style="left:80%;top:15%">2</span>
+        <span class="pin" style="left:24%;top:88%">3</span>
+      </div>
+    </div>
+    <figcaption><b>Montage du cours.</b> ① le vase touche le sol, l'ombre de contact est dense ;
+      ② la lumière vient de la droite ; ③ l'ombre portée part donc vers la gauche, et le dégradé du
+      fond s'accorde à cette lumière.</figcaption>
+  </figure>
+</section>
+
+<!-- 5 -->
+<section id="ombres">
+  <p class="step-meta">Étape 4</p>
+  <h2>Les deux ombres</h2>
+
+  <p>Un objet porte <strong>deux ombres différentes</strong>, et les confondre suffit à rater un
+    montage. L'<strong>ombre propre</strong>, ou ombre de forme, reste sur l'objet : c'est la partie que
+    la lumière n'atteint pas, du côté opposé à la source. L'<strong>ombre portée</strong>, ou projetée,
+    tombe sur une autre surface — le sol, le mur — du même côté que l'ombre propre.</p>
+
+  <p>Le sens est lié, sans exception : on ne peut pas avoir l'ombre propre d'un côté de l'objet et
+    l'ombre portée de l'autre. Ce n'est pas une question de goût, c'est physiquement impossible.</p>
+
+  <figure>
+    <div class="figure-frame">
+      <svg id="scene" viewBox="0 0 780 360" role="img" aria-label="Schéma interactif : une sphère éclairée par une source déplaçable, avec son ombre propre et son ombre portée.">
+        <rect width="780" height="360" fill="#fdfaf3"/>
+        <defs>
+          <radialGradient id="sph5" cx="50%" cy="50%" r="58%" fx="32%" fy="34%">
+            <stop offset="0%" stop-color="#fff6e6"/>
+            <stop offset="16%" stop-color="#e8cba2"/>
+            <stop offset="45%" stop-color="#a98a63"/>
+            <stop offset="75%" stop-color="#584434"/>
+            <stop offset="100%" stop-color="#231b14"/>
+          </radialGradient>
+          <filter id="soft5" x="-50%" y="-150%" width="200%" height="400%">
+            <feGaussianBlur id="blur5" stdDeviation="4"/>
+          </filter>
+          <marker id="arw5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#a8452e"/>
+          </marker>
+        </defs>
+
+        <line x1="40" y1="290" x2="740" y2="290" stroke="#cbbfa8" stroke-width="1.4"/>
+        <circle id="sun-glow" cx="130" cy="72" r="34" fill="#e0a86b" opacity="0.16"/>
+        <circle id="sun" cx="130" cy="72" r="13" fill="#e6a86a"/>
+
+        <g id="rays" stroke="#c98f53" stroke-width="1" stroke-dasharray="5 6" opacity="0.85">
+          <line x1="142" y1="82" x2="292" y2="188"/>
+          <line x1="143" y1="70" x2="350" y2="152"/>
+          <line x1="140" y1="60" x2="600" y2="286"/>
+        </g>
+
+        <ellipse id="shadow" cx="552" cy="296" rx="126" ry="22" fill="#000" opacity="0.2" filter="url(#soft5)"/>
+        <ellipse id="contact" cx="398" cy="293" rx="52" ry="8" fill="#000" opacity="0.42" filter="url(#soft5)"/>
+        <circle cx="350" cy="222" r="68" fill="url(#sph5)"/>
+        <circle cx="310" cy="192" r="9" fill="#fff8ea" opacity="0.6" filter="url(#soft5)"/>
+
+        <g font-family="ui-sans-serif, system-ui, sans-serif" font-size="16">
+          <text id="sun-label" x="176" y="77" fill="#413b32">la source</text>
+
+          <circle cx="466" cy="132" r="14" fill="#a8452e"/>
+          <text x="466" y="137" fill="#fff" font-size="13.5" text-anchor="middle">1</text>
+          <text x="489" y="137" fill="#413b32">ombre propre</text>
+          <line x1="466" y1="146" x2="412" y2="200" stroke="#a8452e" stroke-width="1.3" marker-end="url(#arw5)"/>
+
+          <circle cx="656" cy="232" r="14" fill="#a8452e"/>
+          <text x="656" y="237" fill="#fff" font-size="13.5" text-anchor="middle">2</text>
+          <text x="636" y="237" fill="#413b32" text-anchor="end">ombre portée</text>
+          <line x1="656" y1="246" x2="616" y2="284" stroke="#a8452e" stroke-width="1.3" marker-end="url(#arw5)"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="control">
+      <label for="src-x">Position de la source <output id="src-out">à gauche</output></label>
+      <input type="range" id="src-x" min="110" max="670" value="130" step="1" aria-label="Position de la source lumineuse">
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Type de lumière">
+      <button role="tab" aria-selected="true" data-light="directe" id="tab-directe">Lumière directe</button>
+      <button role="tab" aria-selected="false" data-light="diffuse" id="tab-diffuse">Lumière diffuse</button>
+      <button role="tab" aria-selected="false" data-light="indirecte" id="tab-indirecte">Lumière indirecte</button>
+    </div>
+
+    <div class="tab-panel" id="panel-directe">
+      <p><b>Directe.</b> Une source ponctuelle, ou une lumière nue pointée sur l'objet : l'ombre est
+        nette, bien délimitée, courte. C'est le rendu d'un flash ou d'un projecteur. L'ombre propre et
+        l'ombre portée ont alors la même dureté.</p>
+    </div>
+    <div class="tab-panel" id="panel-diffuse" hidden>
+      <p><b>Diffuse.</b> La lumière passe dans une boîte à lumière, ou à travers un calque diffusant :
+        les bords se fondent, l'ombre s'étale et s'éclaircit. C'est le rendu de studio le plus courant,
+        et celui qu'on cherche en photomontage.</p>
+    </div>
+    <div class="tab-panel" id="panel-indirecte" hidden>
+      <p><b>Indirecte.</b> Le rebond d'un mur ou d'un sol. Elle ne crée pas d'ombre nouvelle : elle
+        débouche les ombres existantes, éclaire largement et prend la couleur de la surface qui la
+        renvoie. C'est elle qui manque aux montages qui paraissent faux.</p>
+    </div>
+
+    <figcaption><b>Fig. 3</b> — Déplacez la source : le point de lumière et l'ombre suivent. ① l'ombre
+      propre, sur l'objet ; ② l'ombre portée, au sol. Elles restent toujours du même côté.</figcaption>
+  </figure>
+
+  <h3>Et une ombre ne se fait pas en un seul calque</h3>
+
+  <p>Une ombre crédible est un <strong>empilement</strong> : une base large et très floue, un noyau
+    plus sombre et plus resserré, puis l'ombre de contact — minuscule, presque noire, collée au pied de
+    l'objet. L'ombre s'éclaircit en s'éloignant, parce que la lumière rebondit tout autour : on n'est
+    jamais dans une pièce entièrement noire.</p>
+
+  <figure>
+    <div class="figure-frame">
+      <svg viewBox="0 0 640 280" role="img" aria-label="Schéma : une ombre portée en trois niveaux superposés.">
+        <rect width="640" height="280" fill="#fdfaf3"/>
+        <defs>
+          <filter id="b1" x="-40%" y="-200%" width="180%" height="500%"><feGaussianBlur stdDeviation="9"/></filter>
+          <filter id="b2" x="-40%" y="-200%" width="180%" height="500%"><feGaussianBlur stdDeviation="5"/></filter>
+          <filter id="b3" x="-40%" y="-200%" width="180%" height="500%"><feGaussianBlur stdDeviation="1.6"/></filter>
+        </defs>
+        <line x1="40" y1="200" x2="600" y2="200" stroke="#cbbfa8" stroke-width="1.4"/>
+        <rect x="72" y="138" width="62" height="62" fill="#6d5a44" rx="2"/>
+        <ellipse cx="342" cy="204" rx="176" ry="24" fill="#000" opacity="0.11" filter="url(#b1)"/>
+        <ellipse cx="300" cy="203" rx="102" ry="15" fill="#000" opacity="0.19" filter="url(#b2)"/>
+        <ellipse cx="172" cy="200" rx="44" ry="8" fill="#000" opacity="0.5" filter="url(#b3)"/>
+        <g font-family="ui-sans-serif, system-ui, sans-serif" font-size="14">
+          <circle cx="428" cy="112" r="13" fill="#a8452e"/>
+          <text x="428" y="117" fill="#fff" font-size="13.5" text-anchor="middle">1</text>
+          <text x="449" y="117" fill="#413b32">base large, floue</text>
+          <circle cx="316" cy="150" r="13" fill="#a8452e"/>
+          <text x="316" y="155" fill="#fff" font-size="13.5" text-anchor="middle">2</text>
+          <text x="337" y="155" fill="#413b32">noyau plus dense</text>
+          <circle cx="176" cy="104" r="13" fill="#a8452e"/>
+          <text x="176" y="109" fill="#fff" font-size="13.5" text-anchor="middle">3</text>
+          <text x="197" y="109" fill="#413b32">contact, presque noir</text>
+        </g>
+      </svg>
+    </div>
+    <figcaption><b>Fig. 4</b> — Trois calques, trois masques. L'ombre de contact ③ est ce qui pose
+      réellement l'objet sur le sol.</figcaption>
+  </figure>
+
+  <div class="card-scrap">
+    <h3>La recette, dans Photoshop</h3>
+    <ul>
+      <li>Un groupe « Ombres » entre le décor et l'objet.</li>
+      <li>Dedans, un calque de réglage <b>Courbes</b> en mode <b>Luminosité</b> : on assombrit sans
+        toucher aux couleurs.</li>
+      <li>Le masque est <b>inversé</b> (noir), puis peint en blanc au pinceau là où l'ombre tombe.</li>
+      <li>On répète pour chaque niveau, et on floute le bord du masque.</li>
+      <li>Un dégradé dans le masque fait s'éteindre l'ombre loin de l'objet.</li>
+    </ul>
+  </div>
+
+  <figure>
+    <div class="figure-frame">
+      <div class="shot shot--wide">
+        <img src="assets/img/shot-options.png" alt="Barre d'options de Photoshop : mode Pinceau, opacité 100 %, flux 100 %." data-zoom>
+      </div>
+    </div>
+    <figcaption><b>Le pinceau, quand on peint le masque.</b> C'est ici qu'on règle son comportement :
+      le mode « Pinceau » pour un bord souple plutôt qu'une arête nette, l'opacité pour doser la
+      densité de l'ombre, et le flux pour empiler les passages sans tout assombrir d'un coup.</figcaption>
+  </figure>
+
+  <figure>
+    <div class="figure-frame">
+      <div class="shot shot--small">
+        <img src="assets/img/shot-masque.png" alt="Panneau des propriétés du masque : densité 100 %, contour progressif 4,0 px, sélectionner et masquer." data-zoom>
+        <span class="pin" style="left:52%;top:48%">1</span>
+        <span class="pin" style="left:30%;top:76%">2</span>
+        <span class="pin" style="left:78%;top:90%">3</span>
+      </div>
+    </div>
+    <figcaption><b>Le panneau du masque.</b> ① la densité règle la force de l'ombre sans y toucher ;
+      ② le contour progressif (ici 4 px) adoucit le bord ; ③ « Sélectionner et masquer » sert à
+      peaufiner un contour, mais la plume reste plus propre.</figcaption>
+  </figure>
+
+  <figure>
+    <div class="figure-frame">
+      <div class="shot shot--small">
+        <img src="assets/img/shot-ombres.png" alt="Panneau Calques du cours : lumière, Groupe 1, ombre raz 2, ombre raz, ombre vase." data-zoom>
+        <span class="pin" style="left:74%;top:30%">1</span>
+        <span class="pin" style="left:74%;top:46%">2</span>
+        <span class="pin" style="left:74%;top:76%">3</span>
+      </div>
+    </div>
+    <figcaption><b>Trois niveaux d'ombre, en vrai.</b> ① le groupe qui les rassemble ; ② deux calques
+      d'ombre empilés — un pour le noyau, un pour la base ; ③ le masque de « ombre vase » garde la
+      trace du pinceau. Les vignettes noires sont des masques inversés.</figcaption>
+  </figure>
+
+  <figure>
+    <div class="figure-frame">
+      <div class="layers">
+        <div class="layers-head">Calques</div>
+        <div class="layer">
+          <span class="layer-eye" aria-hidden="true"></span>
+          <span class="layer-thumb" style="--c1:#ffe6c2;--c2:#e0a86b"></span>
+          <span class="layer-name">Lumière</span>
+          <span class="layer-mode">Luminosité 50 %</span>
+        </div>
+        <div class="layer">
+          <span class="layer-eye" aria-hidden="true"></span>
+          <span class="layer-mask" aria-hidden="true"></span>
+          <span class="layer-name">Objet détouré</span>
+          <span class="layer-mode">masque</span>
+        </div>
+        <div class="layer">
+          <span class="layer-eye" aria-hidden="true"></span>
+          <span class="layer-thumb" style="--c1:#3a3a3a;--c2:#101010"></span>
+          <span class="layer-name">Ombre de contact</span>
+          <span class="layer-mode">Courbes</span>
+        </div>
+        <div class="layer">
+          <span class="layer-eye" aria-hidden="true"></span>
+          <span class="layer-thumb" style="--c1:#2a2a2a;--c2:#0c0c0c"></span>
+          <span class="layer-name">Ombre portée</span>
+          <span class="layer-mode">Courbes</span>
+        </div>
+        <div class="layer layer--group">
+          <span class="layer-eye" aria-hidden="true"></span>
+          <span class="layer-thumb" style="--c1:#4a4a46;--c2:#1c1c1a"></span>
+          <span class="layer-name">Ombres</span>
+          <span class="layer-mode">groupe</span>
+        </div>
+        <div class="layer layer--group">
+          <span class="layer-eye" aria-hidden="true"></span>
+          <span class="layer-thumb" style="--c1:#3c4548;--c2:#121718"></span>
+          <span class="layer-name">Décor</span>
+          <span class="layer-mode">groupe</span>
+        </div>
+        <div class="layer layer--child">
+          <span class="layer-eye" aria-hidden="true"></span>
+          <span class="layer-thumb" style="--c1:#8a5a44;--c2:#3c251c"></span>
+          <span class="layer-name">Table</span>
+          <span class="layer-mode">couleur unie</span>
+        </div>
+        <div class="layer layer--child">
+          <span class="layer-eye" aria-hidden="true"></span>
+          <span class="layer-thumb" style="--c1:#2c3a3f;--c2:#101618"></span>
+          <span class="layer-name">Mur</span>
+          <span class="layer-mode">couleur unie</span>
+        </div>
+      </div>
+    </div>
+    <figcaption><b>La pile de calques.</b> Le groupe « Ombres » se glisse entre le décor et l'objet :
+      une ombre ne passe jamais devant. (Schéma, pas une capture.)</figcaption>
+  </figure>
+</section>
+
+<!-- 6 -->
+<section id="matieres">
+  <p class="step-meta">Étape 5</p>
+  <h2>Opaque, translucide, transparent</h2>
+
+  <p>La matière décide de ce que devient la lumière, et c'est l'ombre portée qui le raconte. Une
+    matière <strong>opaque</strong> bloque la lumière : l'ombre est dense, franche, presque noire au
+    contact. Une matière <strong>translucide</strong> en laisse passer une partie, et l'ombre s'allège
+    en prenant la couleur de l'objet. Une matière <strong>transparente</strong> laisse tout passer en
+    déviant les rayons : le verre concentre la lumière et laisse un point clair dans l'ombre.</p>
+
+  <div class="polaroids">
+    <figure class="polaroid">
+      <img src="assets/img/ex-dessert.jpg" alt="Coupe de glace dans un verre vert." data-zoom loading="lazy">
+      <figcaption>opaque : ombre dense</figcaption>
+    </figure>
+    <figure class="polaroid">
+      <img src="assets/img/ex-candle.jpg" alt="Bougie éclairée de l'intérieur par sa flamme." data-zoom loading="lazy">
+      <figcaption>translucide : la lumière traverse</figcaption>
+    </figure>
+  </div>
+
+  <div class="note">
+    <p><b>Une troisième lumière.</b> Le reflet est un cas à part : la lumière n'est pas absorbée par
+      la surface, elle rebondit. C'est de lui qu'on parle à l'étape suivante.</p>
+  </div>
+</section>
+
+<!-- 7 -->
+<section id="reflets">
+  <p class="step-meta">Étape 6</p>
+  <h2>Les reflets</h2>
+
+  <p>Sur une surface brillante, la lumière n'est pas absorbée : elle rebondit, et l'objet se double
+    d'une image retournée. C'est ce qui fait qu'un verre posé sur une table semble vraiment posé
+    dessus.</p>
+
+  <p>La méthode est simple : on <strong>duplique l'objet</strong>, on le retourne par
+    <strong>symétrie verticale</strong>, on le place sous lui le long de la ligne de contact, puis on
+    baisse l'opacité, on floute, et on dégrade le masque pour que le reflet s'estompe. Un reflet est
+    toujours plus sombre et plus flou que l'objet, et il se déforme si la surface n'est pas plane — un
+    verre rempli d'eau, par exemple.</p>
+
+  <figure>
+    <div class="figure-frame">
+      <div class="shot shot--photo">
+        <img src="assets/img/verre.png" alt="Verre transparent sur un fond bleu, avec son reflet sur une surface brillante." data-zoom loading="lazy">
+        <span class="pin" style="left:50%;top:70%">1</span>
+        <span class="pin" style="left:50%;top:84%">2</span>
+        <span class="pin" style="left:31%;top:47%">3</span>
+      </div>
+    </div>
+    <figcaption><b>Verre transparent sur support brillant.</b> ① la ligne de contact, où l'objet
+      rencontre la surface ; ② le reflet, image retournée, plus sombre et plus floue que le verre ;
+      ③ les bords, qui concentrent la lumière. L'ombre portée est presque invisible : le verre laisse
+      passer la lumière.</figcaption>
+  </figure>
+</section>
+
+</main>
+
+</div>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image agrandie">
+  <button class="lightbox__close" id="lightbox-close" aria-label="Fermer">×</button>
+  <img id="lightbox-img" alt="">
+</div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
