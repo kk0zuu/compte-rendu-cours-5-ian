@@ -3,8 +3,8 @@
    ========================================================= */
 
 :root {
-  --paper: #f2ecdf;
-  --paper-2: #fbf7ec;
+  --paper: #ffffff;
+  --paper-2: #f8f7f4;
   --ink: #23201b;
   --muted: #6f675a;
   --rule: #d8cdb8;
@@ -122,21 +122,21 @@ h1 {
 /* étiquette façon lettres découpées */
 .ransom {
   display: inline-flex;
-  gap: 3px;
   align-items: center;
+  gap: 0.4em;
+  padding: 4px 10px;
   font-family: var(--sans);
   font-size: 11px;
   letter-spacing: 0.06em;
   margin-bottom: 1.4rem;
+  background: var(--ink);
+  color: var(--paper);
 }
 .ransom b {
-  display: inline-block;
-  padding: 2px 8px;
   font-weight: 600;
+  line-height: 1.4;
   text-transform: uppercase;
 }
-.ransom b:nth-child(odd) { background: var(--ink); color: var(--paper); transform: rotate(-1.5deg); }
-.ransom b:nth-child(even) { background: var(--paper-2); color: var(--ink); border: 1px solid var(--rule); transform: rotate(1deg); }
 
 .lede { font-size: 1.1rem; color: #3b362d; margin: 0; }
 
@@ -192,14 +192,15 @@ h1 {
   display: grid;
   place-items: center;
   text-align: center;
+  padding: 10px;
   transform: rotate(11deg);
   opacity: 0.9;
 }
-.stamp span { display: block; font-size: 15px; letter-spacing: 0.04em; margin: 2px 0; }
+.stamp span { display: block; font-size: 12.5px; letter-spacing: 0.02em; margin: 1px 0; }
 
 /* ---------- sections ---------- */
 
-section { padding: 46px 0 40px; border-top: 1px solid var(--rule); position: relative; }
+section { padding: 56px 0 40px; position: relative; }
 
 .step-meta {
   font-family: var(--sans);
@@ -228,7 +229,7 @@ strong { font-weight: 600; }
 figure { margin: 1.8rem 0; position: relative; }
 
 .figure-frame {
-  background: #fffdf8;
+  background: #fff;
   border: 1px solid var(--rule);
   padding: 12px;
   box-shadow: 0 5px 14px rgba(60, 48, 30, 0.06);
@@ -316,7 +317,7 @@ figcaption b { color: var(--ink); font-weight: 600; }
 
 .note {
   border-left: 3px solid var(--accent);
-  background: #faf4e7;
+  background: #fafaf7;
   padding: 0.85rem 1.1rem;
   margin: 1.5rem 0;
   font-size: 0.95rem;
@@ -324,27 +325,6 @@ figcaption b { color: var(--ink); font-weight: 600; }
 }
 .note p { margin-bottom: 0.55rem; }
 .note p:last-child { margin-bottom: 0; }
-
-.card-scrap {
-  position: relative;
-  background: var(--paper-2);
-  border: 1px solid var(--rule);
-  padding: 1.3rem 1.4rem 1.2rem;
-  margin: 1.8rem 0;
-  box-shadow: 0 6px 16px rgba(60, 48, 30, 0.08);
-  transform: rotate(0.5deg);
-}
-.card-scrap::before {
-  content: "";
-  position: absolute;
-  top: -11px; right: 24px;
-  width: 74px; height: 22px;
-  background: var(--tape);
-  transform: rotate(4deg);
-}
-.card-scrap h3 { margin: 0 0 0.7rem; font-family: var(--sans); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
-.card-scrap ul { margin: 0; padding-left: 1.1rem; font-size: 0.93rem; }
-.card-scrap li { margin-bottom: 0.35rem; }
 
 /* ---------- panneau calques ---------- */
 
@@ -479,6 +459,17 @@ input[type="range"]::-moz-range-thumb {
   font-size: 30px;
   cursor: pointer;
   line-height: 1;
+}
+
+/* ---------- signature ---------- */
+
+.signature {
+  text-align: right;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin: 2.6rem 0 0;
 }
 
 /* ---------- animations d'apparition ---------- */
